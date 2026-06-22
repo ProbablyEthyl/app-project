@@ -5,15 +5,11 @@ import net.ethyl.project.mod.instances.ClientData;
 import net.ethyl.project.mod.instances.data.LastDeath;
 import net.ethyl.project.mod.instances.logic.DataHandler;
 import net.minecraft.network.chat.Component;
-import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.entity.player.Player;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.neoforge.client.event.ClientPlayerNetworkEvent;
-import net.neoforged.neoforge.event.entity.living.LivingDeathEvent;
-import net.neoforged.neoforge.event.entity.player.PlayerEvent;
-import net.neoforged.neoforge.network.PacketDistributor;
 
 @EventBusSubscriber(modid = AppMod.MOD_ID, value = Dist.CLIENT)
 public class Events {
