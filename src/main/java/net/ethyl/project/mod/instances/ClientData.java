@@ -3,8 +3,12 @@ package net.ethyl.project.mod.instances;
 import com.google.gson.annotations.Expose;
 import net.ethyl.project.mod.instances.data.LastDeath;
 import net.minecraft.core.BlockPos;
+import net.minecraft.resources.ResourceKey;
+import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.Vec3;
 import org.jetbrains.annotations.NotNull;
+
+import java.awt.*;
 
 public class ClientData {
     private static ClientData instance;
@@ -27,12 +31,8 @@ public class ClientData {
 
     @Expose private LastDeath lastDeath = null;
 
-    public void setLastDeath(@NotNull Vec3 vec3) {
-        this.lastDeath = new LastDeath(vec3);
-    }
-
-    public void setLastDeath(@NotNull BlockPos blockPos) {
-        this.lastDeath = new LastDeath(blockPos);
+    public void setLastDeath(@NotNull Vec3 vec3, ResourceKey<Level> dimension) {
+        this.lastDeath = new LastDeath(vec3, dimension.location().toString());
     }
 
     public LastDeath getLastDeath() {

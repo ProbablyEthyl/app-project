@@ -41,7 +41,7 @@ public class Events {
 
         if (corpse.isDeadOrDying()) {
             Player player = event.getNewPlayer();
-            ClientData.getInstance().setLastDeath(corpse.position());
+            ClientData.getInstance().setLastDeath(corpse.position(), corpse.level().dimension());
             player.sendSystemMessage(Component.literal("You died at: " + ClientData.getInstance().getLastDeath().format()));
         }
     }
